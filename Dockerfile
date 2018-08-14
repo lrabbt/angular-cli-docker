@@ -3,8 +3,7 @@ FROM node:10.7.0-slim
 MAINTAINER Breno Brandão <lrabbt@gmail.com>
 
 COPY run.sh /
-
-RUN mkdir /app
+RUN ["chmod", "+x", "/run.sh"]
 
 WORKDIR /app
 
