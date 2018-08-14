@@ -2,13 +2,15 @@ FROM node:10.7.0-slim
 
 MAINTAINER Breno Brandão <lrabbt@gmail.com>
 
-RUN npm install -g @angular/cli
-RUN mkdir /app
+COPY run.sh /
 
 WORKDIR /app
+
+RUN npm install -g @angular/cli
+RUN mkdir /app
 
 VOLUME /app
 
 EXPOSE 4200
 
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+CMD ["/run.sh"]
