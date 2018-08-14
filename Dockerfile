@@ -4,10 +4,11 @@ MAINTAINER Breno Brandão <lrabbt@gmail.com>
 
 COPY run.sh /
 
+RUN mkdir /app
+
 WORKDIR /app
 
 RUN npm install -g @angular/cli
-RUN mkdir /app
 
 VOLUME /app
 
